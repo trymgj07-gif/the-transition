@@ -4,8 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const anchorLinks = [
+  { label: "Phases", href: "#phases" },
   { label: "Philosophy", href: "#philosophy" },
-  { label: "Transition", href: "#identity" },
   { label: "Published", href: "#published" },
   { label: "Newsletter", href: "#newsletter" },
 ];

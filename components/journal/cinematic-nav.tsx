@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const links = [
+  { label: "Phases", href: "/#phases" },
   { label: "Notes", href: "/notes" },
   { label: "Essays", href: "/essays" },
   { label: "Fragments", href: "/fragments" },

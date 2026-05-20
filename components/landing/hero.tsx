@@ -37,19 +37,13 @@ export function Hero() {
           performed as and who you might become when nobody is watching.
         </motion.p>
 
-        <motion.div
-          variants={fadeUp}
-          className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center"
-        >
-          <PremiumButton href="#philosophy">Enter</PremiumButton>
-          <PremiumButton href="#newsletter" variant="outline">
-            Subscribe
-          </PremiumButton>
+        <motion.div variants={fadeUp} className="mt-12">
+          <PremiumButton href="#newsletter">Subscribe</PremiumButton>
         </motion.div>
       </motion.div>
 
       <motion.a
-        href="#philosophy"
+        href="#phases"
         className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
