@@ -1,0 +1,34 @@
+import { SiteShell } from "@/components/journal/site-shell";
+import { ArticleCard } from "@/components/journal/article-card";
+import { getArticlesByType } from "@/lib/articles";
+
+export const metadata = {
+  title: "Notes — The Transition",
+  description: "Short observations and reflections.",
+};
+
+export default function NotesPage() {
+  const notes = getArticlesByType("note");
+
+  return (
+    <SiteShell>
+      <main className="mx-auto max-w-3xl px-6 py-14 md:px-8 md:py-20">
+        <header className="border-b border-white/[0.06] pb-10">
+          <h1 className="font-[family-name:var(--font-syne)] text-3xl font-semibold tracking-[-0.02em] text-[#f2f0eb]">
+            Notes
+          </h1>
+          <p className="mt-4 text-[15px] leading-relaxed text-[#8a8780]">
+            Short observations — something noticed, remembered, or still being
+            figured out.
+          </p>
+        </header>
+
+        <div className="mt-10 space-y-3">
+          {notes.map((article) => (
+            <ArticleCard key={article.slug} article={article} />
+          ))}
+        </div>
+      </main>
+    </SiteShell>
+  );
+}

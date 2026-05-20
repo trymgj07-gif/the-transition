@@ -85,3 +85,21 @@ body {
     transparent
   );
 }
+
+.article-body p {
+  margin-bottom: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #8a8780;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .article-body p {
+    font-size: 1.125rem;
+    line-height: 1.85;
+  }
+}
