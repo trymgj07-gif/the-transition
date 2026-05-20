@@ -99,6 +99,12 @@ export function getPrimaryFeatured(): Article | undefined {
   );
 }
 
+export function getLatestPublished(limit = 6): Article[] {
+  return [...articles]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, limit);
+}
+
 export function articlePath(article: Article): string {
   const base = { note: "notes", essay: "essays", fragment: "fragments" }[article.type];
   return `/${base}/${article.slug}`;

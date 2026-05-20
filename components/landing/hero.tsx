@@ -13,78 +13,57 @@ export function Hero() {
         animate="visible"
         variants={stagger}
       >
-        <motion.div variants={fadeUp} className="mb-8 flex items-center gap-4">
-          <span className="h-px w-12 bg-[#c4a574]/60" />
+        <motion.div variants={fadeUp} className="mb-10 flex items-center gap-4">
+          <span className="h-px w-14 bg-[#c4a574]/50" />
           <span className="text-[11px] font-medium tracking-[0.32em] uppercase text-[#8a8780]">
-            Anonymous journal
+            Anonymous
           </span>
         </motion.div>
 
         <motion.h1
           variants={fadeUp}
-          className="font-[family-name:var(--font-syne)] text-[clamp(2.5rem,7vw,5rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-[#f2f0eb]"
+          className="font-[family-name:var(--font-syne)] text-[clamp(2.75rem,8vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.03em]"
         >
-          The Transition
+          <span className="text-[#f2f0eb]">For ambitious young men</span>
+          <br />
+          <span className="text-gradient-warm">after the structure ends.</span>
         </motion.h1>
 
         <motion.p
           variants={fadeUp}
-          className="mt-8 text-lg leading-relaxed text-[#8a8780] md:text-xl"
+          className="mt-10 max-w-xl text-lg leading-relaxed text-[#8a8780] md:text-xl"
         >
-          Writing for ambitious young men in the middle of becoming someone
-          else — identity, pressure, discipline, and what happens when the
-          structure you lived inside suddenly ends.
-        </motion.p>
-
-        <motion.p
-          variants={fadeUp}
-          className="mt-4 text-[15px] leading-relaxed text-[#8a8780]/70"
-        >
-          Early-stage. Anonymous. Mostly notes and short essays for now.
+          Identity. Pressure. Discipline. The quiet stretch between who you
+          performed as and who you might become when nobody is watching.
         </motion.p>
 
         <motion.div
           variants={fadeUp}
-          className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
+          className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center"
         >
-          <PremiumButton href="#newsletter">Subscribe</PremiumButton>
-          <PremiumButton href="#journal" variant="outline">
-            What gets written
+          <PremiumButton href="#philosophy">Enter</PremiumButton>
+          <PremiumButton href="#newsletter" variant="outline">
+            Subscribe
           </PremiumButton>
-        </motion.div>
-
-        <motion.div
-          variants={fadeUp}
-          className="mt-20 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/[0.06] pt-8"
-        >
-          {["Notes", "Reflections", "Essays", "Fragments"].map((label) => (
-            <span
-              key={label}
-              className="text-[13px] text-[#8a8780]/80"
-            >
-              {label}
-            </span>
-          ))}
         </motion.div>
       </motion.div>
 
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      <motion.a
+        href="#philosophy"
+        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
       >
-        <motion.div
-          className="flex flex-col items-center gap-2"
+        <motion.span
+          className="text-[10px] tracking-[0.25em] uppercase text-[#8a8780]/50"
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <span className="text-[10px] tracking-[0.25em] uppercase text-[#8a8780]/60">
-            Scroll
-          </span>
-          <div className="h-8 w-px bg-gradient-to-b from-[#8a8780]/40 to-transparent" />
-        </motion.div>
-      </motion.div>
+          Scroll
+        </motion.span>
+        <div className="h-10 w-px bg-gradient-to-b from-[#8a8780]/30 to-transparent" />
+      </motion.a>
     </section>
   );
 }

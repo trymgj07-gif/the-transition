@@ -1,44 +1,30 @@
 import { AnimatedBackground } from "@/components/landing/animated-background";
+import { Hero } from "@/components/landing/hero";
+import { Philosophy } from "@/components/landing/philosophy";
+import { Identity } from "@/components/landing/identity";
+import { Newsletter } from "@/components/landing/newsletter";
+import { Footer } from "@/components/landing/footer";
 import { CinematicNav } from "@/components/journal/cinematic-nav";
-import { HomeHero } from "@/components/journal/home-hero";
-import { HomeIntro } from "@/components/journal/home-intro";
-import { HomeSections } from "@/components/journal/home-sections";
-import { SiteFooter } from "@/components/journal/site-footer";
-import {
-  getArticlesByType,
-  getPrimaryFeatured,
-  getRecentNotes,
-} from "@/lib/articles";
+import { BreathingRoom } from "@/components/journal/breathing-room";
+import { LatestPublished } from "@/components/journal/latest-published";
+import { getLatestPublished } from "@/lib/articles";
 
 export default function Home() {
-  const featured = getPrimaryFeatured();
-  const recentNotes = getRecentNotes(4).filter(
-    (n) => n.slug !== featured?.slug
-  );
-  const essays = getArticlesByType("essay");
-  const fragments = getArticlesByType("fragment");
-
-  if (!featured) {
-    return null;
-  }
+  const latest = getLatestPublished();
 
   return (
     <>
       <AnimatedBackground />
       <CinematicNav />
       <main className="relative z-10">
-        <HomeHero />
-        <HomeIntro />
-        <div className="mx-auto max-w-3xl px-6 md:px-8">
-          <HomeSections
-            featured={featured}
-            notes={recentNotes}
-            essays={essays}
-            fragments={fragments}
-          />
-        </div>
+        <Hero />
+        <Philosophy />
+        <Identity />
+        <BreathingRoom />
+        <LatestPublished articles={latest} />
+        <Newsletter />
       </main>
-      <SiteFooter className="relative z-10 mt-0" />
+      <Footer />
     </>
   );
 }

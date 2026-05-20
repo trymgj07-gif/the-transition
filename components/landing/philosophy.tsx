@@ -5,55 +5,69 @@ import { SectionReveal, MotionLabel } from "./motion";
 
 const pillars = [
   {
-    title: "Emotional realism",
-    body: "Write about what men actually feel — comparison, numbness, pride, boredom — without turning it into a lesson.",
+    title: "Pressure, not platitudes",
+    body: "Comparison, burnout, and the quiet panic of not knowing who you are without the role — named plainly, without a lesson stapled on.",
   },
   {
-    title: "Anonymous",
-    body: "No face, no personal brand arc. The writing should stand on its own so you can read yourself into it.",
+    title: "Anonymous by design",
+    body: "No face on the work. No guru arc. You read yourself into it, not someone else's redemption story.",
   },
   {
-    title: "Small and precise",
-    body: "A good note beats a long essay. Most of this will stay unfinished. That's fine.",
+    title: "Restraint over noise",
+    body: "Language that doesn't perform depth. Most pieces stay small. Most stay unfinished. That's fine.",
   },
 ];
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="relative px-6 py-24 md:px-10 md:py-32">
-      <div className="section-divider mx-auto mb-20 max-w-3xl" />
+    <section id="philosophy" className="relative px-6 py-28 md:px-10 md:py-40">
+      <div className="section-divider mx-auto mb-28 max-w-3xl" />
 
       <div className="mx-auto max-w-3xl">
         <SectionReveal>
           <MotionLabel>Philosophy</MotionLabel>
-          <h2 className="mt-6 font-[family-name:var(--font-syne)] text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.02em] text-[#f2f0eb]">
-            A journal for men between versions of themselves.
+          <h2 className="mt-6 font-[family-name:var(--font-syne)] text-[clamp(2rem,5vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-[#f2f0eb]">
+            Writing for men
+            <br />
+            <span className="text-[#8a8780]">between versions of themselves.</span>
           </h2>
-          <p className="mt-6 text-[15px] leading-relaxed text-[#8a8780]">
-            Not advice. Not a movement. Just careful writing about ambition,
+          <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-[#8a8780] md:text-base">
+            Not advice. Not a movement. Careful attention to ambition,
             masculinity, and the strange quiet after you stop performing the
             role that used to define you.
           </p>
         </SectionReveal>
 
-        <div className="mt-16 space-y-4">
+        <div className="mt-20 grid gap-5 lg:grid-cols-3">
           {pillars.map((pillar, i) => (
-            <SectionReveal key={pillar.title} delay={i * 0.08}>
+            <SectionReveal key={pillar.title} delay={i * 0.1}>
               <motion.article
-                className="glass-panel group p-6 md:p-8 transition-colors duration-300 hover:bg-white/[0.04]"
-                whileHover={{ y: -2 }}
+                className="glass-panel group h-full p-7 md:p-8 transition-all duration-500 hover:border-white/15 hover:bg-white/[0.05]"
+                whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <h3 className="font-[family-name:var(--font-syne)] text-lg font-semibold text-[#f2f0eb]">
+                <span className="font-[family-name:var(--font-syne)] text-sm text-[#c4a574]/70">
+                  0{i + 1}
+                </span>
+                <h3 className="mt-5 font-[family-name:var(--font-syne)] text-lg font-semibold text-[#f2f0eb]">
                   {pillar.title}
                 </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#8a8780]">
+                <p className="mt-3 text-[14px] leading-relaxed text-[#8a8780]">
                   {pillar.body}
                 </p>
               </motion.article>
             </SectionReveal>
           ))}
         </div>
+
+        <SectionReveal className="mt-24">
+          <p className="max-w-2xl text-xl leading-relaxed text-[#f2f0eb]/85 md:text-2xl md:leading-relaxed">
+            Most men don&apos;t need another voice telling them to improve.
+            They need something that names what they&apos;re already living —
+            the gap between who they performed as and who they might actually
+            be.
+          </p>
+        </SectionReveal>
       </div>
     </section>
   );
