@@ -16,7 +16,7 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "most-men-dont-miss-the-sport",
-    type: "note",
+    type: "essay",
     title: "Most men don't miss the sport.",
     subtitle: "They miss who they were when they played.",
     excerpt:
@@ -88,10 +88,9 @@ export function getRecentNotes(limit = 4): Article[] {
 }
 
 export function getPrimaryFeatured(): Article | undefined {
-  return (
-    articles.find((a) => a.featured && a.type === "note") ??
-    articles.find((a) => a.featured)
-  );
+  return articles
+    .filter((a) => a.featured)
+    .sort((a, b) => b.date.localeCompare(a.date))[0];
 }
 
 export function getLatestPublished(limit = 6): Article[] {
