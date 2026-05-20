@@ -5,7 +5,6 @@ import { PhasesFramework } from "@/components/phases/phases-framework";
 import { Newsletter } from "@/components/landing/newsletter";
 import { Footer } from "@/components/landing/footer";
 import { CinematicNav } from "@/components/journal/cinematic-nav";
-import { BreathingRoom } from "@/components/journal/breathing-room";
 import { LatestPublished } from "@/components/journal/latest-published";
 import { getLatestPublished } from "@/lib/articles";
 
@@ -18,9 +17,8 @@ export default function Home() {
       <CinematicNav />
       <main className="relative z-10">
         <Hero />
-        <PhasesFramework />
         <Philosophy />
-        <BreathingRoom />
+        <PhasesFramework />
         <LatestPublished articles={latest} />
         <Newsletter />
       </main>
