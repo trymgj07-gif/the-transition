@@ -1,3 +1,5 @@
+import { mostMenDontMissTheSportBody } from "./content/most-men-dont-miss-the-sport";
+
 export type ArticleType = "note" | "essay" | "fragment";
 
 export type Article = {
@@ -21,14 +23,7 @@ export const articles: Article[] = [
       "What athletes often mourn isn't competition — it's the structure, identity, and certainty the game gave them.",
     date: "2026-05-12",
     featured: true,
-    body: [
-      "A lot of athletes think they miss competition.",
-      "Sometimes they do.",
-      "But often, what they really miss is the structure. The identity. The certainty of who they were inside that world.",
-      "Training gave the day shape. Performance gave self-worth shape. The team gave belonging shape.",
-      "Then one day it ends.",
-      "And the strange part is not losing the sport. It is losing the version of yourself that made sense inside it.",
-    ],
+    body: mostMenDontMissTheSportBody,
   },
   {
     slug: "waking-up-without-a-schedule",
