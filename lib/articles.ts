@@ -92,6 +92,13 @@ export function getRecentNotes(limit = 4): Article[] {
   return getArticlesByType("note").slice(0, limit);
 }
 
+export function getPrimaryFeatured(): Article | undefined {
+  return (
+    articles.find((a) => a.featured && a.type === "note") ??
+    articles.find((a) => a.featured)
+  );
+}
+
 export function articlePath(article: Article): string {
   const base = { note: "notes", essay: "essays", fragment: "fragments" }[article.type];
   return `/${base}/${article.slug}`;
